@@ -33,7 +33,15 @@ pip install playwright pillow pypdf
 python -m playwright install chromium
 ```
 
-## Use
+## Use it in claude.ai, Claude Desktop or Cowork
+
+Download the skill zips from the [latest release](https://github.com/rahmangamer12/shipwright/releases/latest):
+
+- **claude.ai / Claude Desktop chat:** Settings → Capabilities → Skills → *Upload skill*, once per zip (`shipwright-deliver.zip` first, then `design-qa`, `design-craft`, `nextjs`, `wordpress`). Turn on code execution. Then upload a client brief/zip in any chat and say *"deliver this"*. Results come back as downloadable files.
+- **Cowork:** add the plugin from this marketplace, or upload `shipwright-plugin.zip` as a custom plugin.
+- Skills availability depends on your Claude plan and workspace settings.
+
+## Use (Claude Code)
 
 ```
 /shipwright:deliver C:/Downloads/client-brief.zip

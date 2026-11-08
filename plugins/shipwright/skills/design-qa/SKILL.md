@@ -19,6 +19,8 @@ It writes, per width (375, 768, 1440): a full-page PNG, and `report.json` with f
 
 Checks: horizontal overflow and the elements causing it · broken images · images without alt · text contrast below WCAG AA · tap targets < 24 px (mobile) · `href="#"`/empty links · lorem ipsum/placeholder text · missing/duplicate H1 and skipped heading levels · missing title/meta description · console errors and failed requests · fonts falling back.
 
+**If the scan cannot run** (claude.ai/Desktop chat without a browser, no Playwright): try `pip install playwright pillow && python -m playwright install chromium` once; if that fails, review the HTML/CSS source against the same checklist (fixed widths > 375px, images without alt, `href="#"`, lorem ipsum, colour pairs for contrast, heading order, meta tags) and ask the user for screenshots at mobile and desktop width. Say clearly in the report that the scan was manual.
+
 ## 2. Visual review (you)
 
 Open every screenshot with the Read tool and look like a picky client. Check:

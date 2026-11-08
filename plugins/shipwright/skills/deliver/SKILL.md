@@ -10,6 +10,14 @@ You are running a client job end to end. The client judges only one thing: **doe
 
 Helper scripts live in `scripts/` next to this file (use the base directory shown when this skill loaded). They need Python 3.9+; `shots.py` in the design-qa skill also needs `pip install playwright pillow` and `python -m playwright install chromium`.
 
+## Where am I running?
+
+This skill works in Claude Code, Claude Desktop, Cowork and claude.ai chat. Adapt paths, never stop:
+- **Claude Code / Cowork:** work in the current folder as below.
+- **claude.ai or Desktop chat:** the client's files are uploaded (usually under `/mnt/user-data/uploads`); use `/tmp/jobs/<job-slug>/` as the job folder and copy the final zip and HANDOFF.md to `/mnt/user-data/outputs/` so the user can download them. If a path differs, list the upload folder first.
+- **No code execution at all:** do every phase by reading the files directly, write SPEC.md and HANDOFF.md as replies/files, and deliver the code as downloadable files.
+- If a helper script cannot run (missing package, no network), do that step by hand following the same checklist and say so in the handoff — do not skip the step.
+
 ## Job folder
 
 Create one folder per job in the current working directory and keep everything inside it:
@@ -56,7 +64,7 @@ Build in `build/`. Tick SPEC items only when actually done. Keep a short `qa/bui
 ## Phase 5 — Verify (two independent checks)
 
 1. **Design QA** — load the `design-qa` skill and run it on every page/screen at mobile, tablet and desktop. Fix every Critical/Major finding, then re-run. If the client gave a reference (site, mockup, HTML), run the side-by-side comparison too.
-2. **Requirement audit** — dispatch the `brief-auditor` agent with only: the path to `SPEC.md`, the path to `build/`, and how to run/view it. Do **not** pass your opinion of the work. It returns PASS/FAIL per requirement with evidence.
+2. **Requirement audit** — if the `brief-auditor` agent exists (Claude Code plugin install), dispatch it with only: the path to `SPEC.md`, the path to `build/`, and how to run/view it — not your opinion of the work. Otherwise (chat, Desktop, Cowork without agents) do a separate audit pass yourself following `references/audit.md` exactly, as if someone else built it.
 3. Fix every FAIL, re-audit. Two rounds maximum on the same item; if it still fails, it goes into the handoff as a known gap with the reason — never hide it.
 
 Build commands (`npm run build`, lint, type-check) must exit 0 before delivery. Report real output; never claim a check you did not run.
