@@ -1,6 +1,6 @@
 {
   "name": "shipwright",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Brief in, finished work out. Reads a client brief, zip or folder, asks only the questions that block the work, builds it (Next.js, WordPress, HTML/CSS, documents), checks the design and every requirement with an independent auditor, and packages a client-ready delivery.",
   "author": { "name": "Abdul Rehman" },
   "license": "MIT",

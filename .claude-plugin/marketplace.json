@@ -3,14 +3,14 @@
   "owner": { "name": "Abdul Rehman" },
   "metadata": {
     "description": "Brief in, finished work out. Client-delivery plugins for Claude Code.",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
       "name": "shipwright",
       "source": "./plugins/shipwright",
       "description": "Turn any client brief, zip or folder into finished, design-checked, packaged work: intake, smart questions, build (Next.js, WordPress, HTML, docs), independent QA and a client-ready handoff.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "productivity",
       "keywords": ["client-work", "freelance", "brief", "nextjs", "wordpress", "design-qa", "delivery"]
     }

@@ -1,6 +1,6 @@
 ---
 name: deliver
-description: Turn a client brief, zip, folder, screenshot, Figma export or written spec into finished, verified, packaged work. Use when the user hands over a job (a brief, a zip, project files, a reference site or pasted requirements) and wants it done — "build this", "do this client job", "make it like the brief", "kaam karo", "ye brief poora karo", "deliver this". Runs intake, clarifying questions, build, independent QA and handoff.
+description: Shipwright (also triggered when the user types "shipwright"). Turn a client brief, zip, folder, screenshot, Figma export or written spec into finished, verified, packaged work. Use when the user hands over a job (a brief, a zip, project files, a reference site or pasted requirements) and wants it done — "build this", "do this client job", "make it like the brief", "kaam karo", "ye brief poora karo", "deliver this". Runs intake, clarifying questions, build, independent QA and handoff.
 argument-hint: "<path to zip / folder / brief file, or paste the brief>"
 ---
 
